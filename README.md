@@ -1,8 +1,13 @@
-tf2-visualizer
-==============
+# tf2-visualizer
 
-Final Project for CS467: Social Visualization 
+Created by Sarah Condic, Nihit Desai, Perry Huang (@perry_huang)
+
+## Final Project for CS467: Social Visualization 
 
 Spring 2012 @ the University of Illinois at Urbana-Champaign
 
-Authors: Sarah Condic, Nihit Desai, Perry Huang (@perry_huang)
+## Requirements
+
+* Ruby with sinatra, elif, file-tail, and cgi gems
+* Web server with PHP and rack support
+* Team Fortress 2 server with Sourcemod installed and slogger.smx plugin loaded
