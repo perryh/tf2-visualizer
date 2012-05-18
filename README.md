@@ -1,6 +1,6 @@
 # tf2-visualizer
 
-Created by Sarah Condic, Nihit Desai, Perry Huang (@perry_huang)
+Created by Sarah Condic, Nihit Desai, Perry Huang
 
 [Screenshots](http://imgur.com/a/nZoyK/)
 
