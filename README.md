@@ -2,6 +2,8 @@
 
 Created by Sarah Condic, Nihit Desai, Perry Huang (@perry_huang)
 
+[Screenshots](http://imgur.com/a/nZoyK/)
+
 ## Final Project for CS467: Social Visualization 
 
 Spring 2012 @ the University of Illinois at Urbana-Champaign
