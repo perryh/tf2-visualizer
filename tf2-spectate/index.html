@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>Spectate Server</title>
+    <script src="jquery.js" type="text/javascript" charset="utf-8"></script>	
+	<link rel="stylesheet" href="spectate.css">
+	<script src="XMLHttpRequest.js"></script>
+
+	<link rel="stylesheet" href="960/960.css" />
+	<link rel="stylesheet" href="960/text.css" />
+
+	
+
+
+<script>
+
+function moveKills(){
+	//$('.killfeed').fadeOut("1");
+	
+		var kids = $('.chatlist').children();
+			$.each(kids, function(){
+				//Move if the item isn't a chat message
+				 if($(this).text().indexOf('says') < 0){
+					$('.killfeed').append($(this));
+					$('.killfeed').find($(this)).wrap(document.createElement("p"));
+				}
+			});
+			
+			
+	$('.killfeed').find('p').slice(1,-10).remove();
+	//$('.killfeed').fadeIn("1");
+}
+
+
+var oldText = "";
+
+function updateChat(){
+//Get the chat stream and update the chat box every second
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/chat', true);
+    xhr.send(null);
+    var timer;
+    timer = window.setInterval(function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            window.clearTimeout(timer);
+        }
+		//  console.log(xhr.responseText);
+		var text = xhr.responseText;
+		
+		//if(text == oldText) alert("changed");
+		//oldText = text;
+		
+		//$(".hidden").html(text);
+		
+		$('.chatlist').html(text);
+		moveKills();
+		$('.chatlist').animate({ scrollTop: 10000}, 3000);
+
+    }, 1000);
+	
+}
+
+function prediction(){
+	$.get('/prediction', function(data) {
+		var values = data.split(" ");
+		//Update score bar with animation
+	
+	$('.bluscore').animate({
+		width: values[0]
+	}, 1500);
+	$('.redscore').animate({
+		width: values[1]
+	}, 1500);
+	
+	
+	});
+}
+
+function getTeams(){
+	$.get('/teams', function(data) {
+		
+		$(".red-players").html(data);
+		$(".blu-players").html("");
+		
+		var kids = $('.red-players').children();
+			$.each(kids, function(){
+				//Move if the item isn't a chat message
+				 if($(this).attr("team") == "3"){
+					$('.blu-players').append($(this));
+				}
+			});
+		
+	});
+
+}
+
+$(function() {
+
+
+
+
+
+	updateChat();
+	prediction();
+	getTeams();
+	
+	//Refresh prediction every few seconds
+	window.setInterval(function(){
+		prediction();
+	}, 10000);
+
+	
+	window.setInterval(function(){
+		getTeams();
+	}, 10000);
+	
+	
+	
+	//refresh page every 5 minutes
+	//setInterval("location.reload(true)", * 300000);
+
+	
+	
+});
+
+
+</script>
+
+
+
+</head>
+<body>
+
+<div class="stripes">
+<div class="container_16">
+	<div class="tab spectate active">Spectate</div>
+	<div class="tab stats inactive"><a href="../tf2-stats/index.html">Stats</a></div>
+	<div class="tab about inactive"><a href="../tf2-stats/about.html">About</a></div>
+</div>
+</div>
+
+
+
+<div class="container_16">
+
+		<div class="grid_12">
+
+			<div class="score">
+			<div class="bluscore">
+			Attacking
+			</div>
+			<div class="redscore">
+			Defending
+			</div>
+			</div>
+			<div id="linegraph" class="linegraph">
+			
+			<object type="application/x-shockwave-flash" height="400" width="700" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=perryh" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=perryh&auto_play=true&start_volume=25" /></object>
+			
+			</div>
+			
+			
+			<div class="chatlist">
+				Loading the latest chats...
+			</div>
+
+		</div>
+		<div class="grid_4">
+		<div class="killfeed">
+		<!--
+			<p><del> <em>heavyheavyheavy</em> <a href="/eyelander"></a> <strong>scout</strong></del></p>
+			<p><del> <strong>Scout</strong> <a href="/bat"></a> <em>Heavy</em></del></p>
+			<p><del> <em>heavy</em> <a href="/fist"></a> <strong>scout</strong></del></p>
+		-->
+		</div>
+		</div>
+
+<div class="clear"></div>
+<br><br><br>	
+		<div class="grid_8">
+	<div class="legend"> 
+		<div class="redteam">Red</div>
+		<div class="red-players">
+			Loading players....
+		</div>	
+	</div>
+</div>
+<div class="grid_8">
+	<div class="legend">
+	<div class="bluteam">Blu</div>
+		<div class="blu-players">
+			Loading players....
+		</div>
+	</div>
+</div>
+		
+</div>
+
+<div class="hidden"></div>
+
+</body>
+</html>

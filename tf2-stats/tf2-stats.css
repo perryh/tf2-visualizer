@@ -1,0 +1,149 @@
+@font-face {
+	font-family: tf2;
+	src: url('TF2.ttf');
+}
+@font-face {
+	font-family: tf2build;
+	src: url('tf2build.ttf');
+}
+@font-face {
+	font-family: tf2secondary;
+	src: url('TF2secondary.ttf');
+}
+
+body {
+    background: #2b2623;
+    color: #2e2b29;
+}
+.halfgraph{
+	height:300px;
+	width: 460px;
+}
+tspan{
+	font-family:tf2!important;
+}
+.stripes{
+	background-image:url('stripe.png');
+	background-repeat:repeat;
+
+	height:100px;
+	margin: -8px;
+	margin-bottom: 30px;
+	border-bottom: 3px solid #a69588;
+}
+.tab{
+	position:relative;
+	height:  75px;
+
+	font-size:36pt;
+	font-family:tf2build;
+	text-align:center;
+	line-height:75px;
+	
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	
+}
+.active{
+	background-color: #2b2623;
+	color: #ece3cb;
+	border-top: 3px solid #a69588;
+	border-left: 3px solid #a69588;
+	border-right: 3px solid #a69588;
+}
+.inactive{
+	background-color: #241f1d;
+	color: #c1a18a;
+}
+.inactive:hover{
+	background-color: #2b2623;
+	cursor: pointer;
+}
+.about{
+	width: 200px;
+	top: -130px;
+	left: 610px;
+}
+.stats{
+	width: 200px;
+	top: -50px;
+	left: 375px;
+}
+.spectate{
+	width: 350px;
+	top: 25px;
+}
+.tab a{
+	color: #c1a18a;
+	text-decoration: none;
+}
+.tab a:hover{
+	color: #dabdab;
+}
+
+.redtxt{
+	background-color:#9d302f;
+	display: inline-block;
+	width: 18px;
+	height:18px;
+}
+.blutxt{
+	background-color:#385c78;
+	display: inline-block;
+	width: 18px;
+	height:18px;
+}
+.button{
+	background-color: #2e2b29;
+	border-radius: 10px;
+	border: 3px solid #a69588;
+	color: #ece3cb;
+	font-size:12pt;
+	font-family:tf2build;
+	text-align:center;
+	width:75px;
+	padding:5px;
+	cursor:pointer;
+	margin:3px;
+}
+.button a:hover{
+	background-color:#4F4B48;
+}
+.buttons{
+	margin: 15px 0;
+	text-align: center;
+}
+.buttons a{
+	color: #ece3cb;
+	text-decoration:none;
+}
+.text{
+	width:960;
+	margin-left:auto;
+	margin-right:auto;
+	color:#ece3cb;
+	font-size:32px;
+	text-align:center;
+	font-family: tf2secondary;
+}
+.text a{
+	color: #9d302f;
+}
+.text a:visited{
+	color:#385c78;
+}
+.headingtext{
+	color:#ece3cb;
+	font-size:32px;
+	text-align:center;
+	font-family: tf2secondary;
+}
+hr{
+	border: none;
+	border-bottom: 4px dotted #4F4B48;
+	margin: 50px 0;
+}

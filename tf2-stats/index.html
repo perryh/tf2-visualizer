@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Server Stats</title>
+    <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="prototype.js" type="text/javascript" charset="utf-8"></script>
+    <script src="raphael.js" type="text/javascript" charset="utf-8"></script>
+    <script src="grafico.base.js" type="text/javascript" charset="utf-8"></script>
+    <script src="grafico.line.js" type="text/javascript" charset="utf-8"></script>
+	<script src="grafico.bar.js" type="text/javascript" charset="utf-8"></script>
+	
+	<link rel="stylesheet" href="tf2-stats.css">
+	<link rel="stylesheet" href="960.css" />
+
+	<script src="graphs.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+<body>
+
+<div class="stripes">
+<div class="container_16">
+	<div class="tab spectate inactive"><a href="http://cs467.perryhuang.com:4567/tf2-spectate/index.html">Spectate</a></div>
+	<div class="tab stats active">Stats</div>
+	<div class="tab about inactive"><a href="about.html">About</a></div>
+</div>
+</div>
+
+
+<div class="data"></div>
+
+	<div class="container_16">
+	
+		<div class="grid_8">
+				<div class="headingtext">Number of Thanks</div>
+				<div id="thanksgraph" class="halfgraph"></div>
+				<div class="buttons">
+					<a onClick="thanksSunday()"><span class="button" day="sun">Sun</span></a>
+					<a onClick="thanksMonday()"><span class="button" day="mon">Mon</span></a>
+					<a onClick="thanksTuesday()"><span class="button" day="tue">Tue</span></a>
+					<a onClick="thanksWednesday()"><span class="button" day="wed">Wed</span></a>
+					<a onClick="thanksThursday()"><span class="button" day="thu">Thu</span></a>
+					<a onClick="thanksFriday()"><span class="button" day="fri">Fri</span></a>
+					<a onClick="thanksSaturday()"><span class="button" day="sat">Sat</span></a>
+				</div>
+
+		
+		</div>
+		
+		<div class="grid_8">
+			<div class="headingtext">Number of Swears</div>
+			<div id="sweargraph" class="halfgraph"></div>
+				<div class="buttons">
+					<a onClick="swearSunday()"><span class="button" day="sun">Sun</span></a>
+					<a onClick="swearMonday()"><span class="button" day="mon">Mon</span></a>
+					<a onClick="swearTuesday()"><span class="button" day="tue">Tue</span></a>
+					<a onClick="swearWednesday()"><span class="button" day="wed">Wed</span></a>
+					<a onClick="swearThursday()"><span class="button" day="thu">Thu</span></a>
+					<a onClick="swearFriday()"><span class="button" day="fri">Fri</span></a>
+					<a onClick="swearSaturday()"><span class="button" day="sat">Sat</span></a>
+				</div>
+		
+		</div>
+		
+		<div class="clear"></div>
+		
+		<hr />
+		
+		
+		<div class="grid_8">
+			<div class="headingtext">Most popular class</div>
+			<div id="classgraph" class="halfgraph">
+			</div>
+				<div class="buttons">
+					<a onClick="classRed()"><span class="button" team="red">Red</span></a>
+					<a onClick="classBlu()"><span class="button" team="blu">Blu</span></a>
+				</div>
+		
+		</div>
+		
+		<div class="grid_8" >
+		<div class="headingtext">Which team wins</div>
+		<div id="wingraph" class="halfgraph"></div>
+		
+		</div>
+		
+		<div class="clear"></div>
+		<hr />
+		
+		<div class="grid_8">
+		<div class="headingtext">Average round time</div>
+		<div id="timegraph" class="halfgraph"></div>
+				<div class="buttons">
+					<a onClick="timeSunday()"><span class="button" day="sun">Sun</span></a>
+					<a onClick="timeMonday()"><span class="button" day="mon">Mon</span></a>
+					<a onClick="timeTuesday()"><span class="button" day="tue">Tue</span></a>
+					<a onClick="timeWednesday()"><span class="button" day="wed">Wed</span></a>
+					<a onClick="timeThursday()"><span class="button" day="thu">Thu</span></a>
+					<a onClick="timeFriday()"><span class="button" day="fri">Fri</span></a>
+					<a onClick="timeSaturday()"><span class="button" day="sat">Sat</span></a>
+				</div>
+		</div>
+		
+		<div class="grid_8">
+		<div class="headingtext">Users Online</div>
+		<div id="logingraph" class="halfgraph"></div>
+				<div class="buttons">
+					<a onClick="loginSunday()"><span class="button" day="sun">Sun</span></a>
+					<a onClick="loginMonday()"><span class="button" day="mon">Mon</span></a>
+					<a onClick="loginTuesday()"><span class="button" day="tue">Tue</span></a>
+					<a onClick="loginWednesday()"><span class="button" day="wed">Wed</span></a>
+					<a onClick="loginThursday()"><span class="button" day="thu">Thu</span></a>
+					<a onClick="loginFriday()"><span class="button" day="fri">Fri</span></a>
+					<a onClick="loginSaturday()"><span class="button" day="sat">Sat</span></a>
+				</div>
+		</div>
+	<!--
+	<div class="clear"></div>
+	<div class="grid_16">
+	<img src="cloud.png">
+	</div>
+	-->
+	</div>
+
+</body>
+</html>
